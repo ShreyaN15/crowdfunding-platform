@@ -1,0 +1,19 @@
+.campaigns-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .campaign-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .campaign-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
