@@ -1,42 +1,30 @@
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
-import "./Campaigns.css"; // Ensure this file exists
+import "swiper/css/navigation";
+import "./Campaigns.css";
+
+import campaign1 from "../assets/campaign1.jpeg";
+import campaign2 from "../assets/campaign2.jpeg";
 
 const campaigns = [
-  {
-    id: 1,
-    title: "Help Build a School",
-    description: "Support education for underprivileged children.",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 2,
-    title: "Medical Aid for Children",
-    description: "Providing free medical care for kids in need.",
-    image: "https://via.placeholder.com/300",
-  },
+  { id: 1, title: "Help Build a School", img: campaign1, desc: "Fundraising for school construction." },
+  { id: 2, title: "Medical Aid for Children", img: campaign2, desc: "Providing healthcare support." }
 ];
 
 const Campaigns = () => {
   return (
     <div className="campaigns-container">
-      <h2>Ongoing Campaigns</h2>
-      <Swiper
-        spaceBetween={30}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        modules={[Navigation, Pagination]}
-      >
+      <h2>Active Campaigns</h2>
+      <Swiper modules={[Pagination, Navigation]} spaceBetween={20} slidesPerView={1} navigation pagination={{ clickable: true }}>
         {campaigns.map((campaign) => (
           <SwiperSlide key={campaign.id}>
             <div className="campaign-card">
-              <img src={campaign.image} alt={campaign.title} />
+              <img src={campaign.img} alt={campaign.title} />
               <h3>{campaign.title}</h3>
-              <p>{campaign.description}</p>
+              <p>{campaign.desc}</p>
             </div>
           </SwiperSlide>
         ))}
